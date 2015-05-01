@@ -14,6 +14,10 @@ var fs = require('fs');
 var path = require('path');
 // Add-on mime module provides abiilty to derive a MIME type based on a filename extension
 var mime = require('mime');
+// Require js file for socket.io-based server-side functionality
+var chatServer = require('./lib/chat_server');
+
+
 
 // Cache object is where the contents of cached files are stored.
 var cache = {};
@@ -95,4 +99,6 @@ server.listen(3000,function(){
 });
 
 
+//
+chatServer.listen(server);
 
