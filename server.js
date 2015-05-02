@@ -94,11 +94,10 @@ var server = http.createServer(function(request, response) {
 });
 
 // Starts the HTTP Server
-server.listen(3000,function(){
-  console.log("Server listening on port 3000.");
+server.listen(8000,function(){
+  console.log("Server listening on port 8000.");
 });
-
-
-//
+// Had issues with port 3000
+// This error :: warn  - error raised: Error: listen EADDRINUSE
 chatServer.listen(server);
 
