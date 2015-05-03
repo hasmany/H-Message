@@ -49,7 +49,7 @@ function serveStatic(response, cache, absPath) {
   // If file is found in the cache, serve it
   if (cache[absPath]) {
     sendFile(response,absPath, cache[absPath]);
-  // If file is nout in cache
+  // If file is not in cache
   } else {
   // Check if file exists via callback function
     fs.exists(absPath, function(exists) {
@@ -75,7 +75,7 @@ function serveStatic(response, cache, absPath) {
 
 // Instantiate HTTP server
 
-// Create HTTP server, using anonymous function to define pre-requst behavior
+// Create HTTP server, using anonymous function to define pre-request behavior
 var server = http.createServer(function(request, response) {
   var filePath = false;
 

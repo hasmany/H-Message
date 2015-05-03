@@ -45,6 +45,7 @@ $(document).ready(function(){
   // Instantiate Chat class
   var chatApp = new Chat(socket);
 
+  // Listener for when nameResult is triggered
   socket.on('nameResult', function(result){
     var message;
 
@@ -56,13 +57,49 @@ $(document).ready(function(){
     $('#messages').append(divSystemContentElement(message));
   });
 
+  // Listener for when joinResult is triggered
   socket.on('joinResult',function(result) {
     $('#room').text(result.room);
     $('#messages').append(divSystemContentElement('Room changed.'));
   });
 
+  // Listener for when message is triggered
+  // Triggered when socket broadcast message to all in users in a room
   socket.on('message', function(message)  {
+    // Display received messages from other users
+    var newElement = $('<div></div>').text(message.text);
+    $('#messages').append(newElement);
+  });
 
+  // Listener for when rooms is triggered
+  // Display list of rooms available
+  socket.on('rooms',function(rooms) {
+  // Empty Dom element, to rebuild room list
+    $('#room-list').empty();
+  // Loop through rooms
+    for (var room in rooms) {
+      room = room.substring(1,room.length);
+      if ( room!= '') {
+        $('#room-list').append(divEscapedContentElement(room))
+      }
+    }
+  // Allow click of a room name to change to that room
+    $('#room-list div').click(function(){
+      chapApp.processCommand('/join' + $(this).text());
+      $('#send-message').focus();
+    });
+  });
+
+  // Request list of available rooms intermittently
+  setInterval(function() {
+    socket.emit('rooms');
+  },1000);
+
+  $('#send-message').focus();
+
+  $('#send-form').submit(function() {
+    processUserInput(chatApp,socket);
+    return false;
   });
 
 });
