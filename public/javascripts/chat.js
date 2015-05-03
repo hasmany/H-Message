@@ -49,7 +49,7 @@ Chat.prototype.processCommand = function(command) {
       words.shift();
   // Change array back into a string with a space as a delimiter
       var room = words.join(' ');
-  // Call chnageRoom function passing in room string
+  // Call changeRoom function passing in room string
       this.changeRoom(room);
       break;
     case 'nick':
