@@ -22,7 +22,7 @@ function processUserInput(chatApp, socket) {
   var message = $('#send-message').val();
   var systemMessage;
   // If user input begins with slash, treat it as command
-  if (message.chartAt(0) == '/') {
+  if (message.charAt(0) == '/') {
     systemMessage = chatApp.processCommand(message);
     if (systemMessage) {
   // systemMessage will return false to break out
@@ -30,7 +30,7 @@ function processUserInput(chatApp, socket) {
     }
   } else {
   // Broadcast noncommand input to other users
-    chapApp.sendMessage($('#room').text(),message);
+    chatApp.sendMessage($('#room').text(),message);
     $('#messages').append(divEscapedContentElement(message));
     $('#messages').scrollTop($('#messages').prop('scrollHeight'));
   }
@@ -85,7 +85,7 @@ $(document).ready(function(){
     }
   // Allow click of a room name to change to that room
     $('#room-list div').click(function(){
-      chapApp.processCommand('/join' + $(this).text());
+      chapApp.processCommand('/join ' + $(this).text());
       $('#send-message').focus();
     });
   });

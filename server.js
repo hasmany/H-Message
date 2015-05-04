@@ -36,7 +36,7 @@ function send404(response) {
 // Handling serving of file data
 // Write HTTP headers and tehn sends the contents fo the file.
 function sendFile(response, filePath, fileContents) {
-  response.writeHead(200, {"Content-type": mime.lookup(path.basename(filePath))}
+  response.writeHead(200, {"content-type": mime.lookup(path.basename(filePath))}
   );
   response.end(fileContents);
 }
@@ -58,7 +58,8 @@ function serveStatic(response, cache, absPath) {
         fs.readFile(absPath, function(err,data) {
   // Error Handling
           if (err) {
-            send404(response)
+            console.log(err);
+            send404(response);
           } else {
   // Set read file to cache, and serv file
             cache[absPath] = data;
@@ -67,6 +68,7 @@ function serveStatic(response, cache, absPath) {
         });
   // If file does not exist, display error message
       } else {
+        console.log(exists);
         send404(response);
       }
     });
@@ -85,6 +87,7 @@ var server = http.createServer(function(request, response) {
   } else {
   // Translate URL path to relative file path
   // (public is where our files are stored)
+    console.log("url ::" + request.url);
     filePath = "public" + request.url;
   }
   // Abs path appends './', the root of our application

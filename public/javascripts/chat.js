@@ -18,7 +18,7 @@ Chat.prototype.sendMessage = function(room,text) {
     text: text,
   };
   // Emit socket, with message object
-  this.socket.emit('message',{message: message});
+  this.socket.emit('message',message);
 };
 
 // Handles function to change rooms:
@@ -38,10 +38,10 @@ Chat.prototype.changeRoom = function(room) {
 Chat.prototype.processCommand = function(command) {
   // Change string into an array with a space delimiter
   var words = command.split(' ');
-  // Parse command form first word ( confusing, seems to omit the first letter? )
+  // Parse command form first word ( confusing, seems to omit the first letter? Because first letter is a slash )
   var command = words[0].substring(1, words[0].length).toLowerCase();
   // Why is messagse false?
-  var messagse = false;
+  var message = false;
   // Switch for the first word from command
   switch(command) {
     case 'join':
@@ -56,7 +56,7 @@ Chat.prototype.processCommand = function(command) {
   // Remove first word from words( 'nick', in this case)
       words.shift();
   // Change array back into a string with a space as a delimiter
-      var name = word.join(' ');
+      var name = words.join(' ');
   // Emit a event called nameAttempt to server
       this.socket.emit('nameAttempt',name);
       break;
