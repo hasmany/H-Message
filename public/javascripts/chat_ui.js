@@ -85,7 +85,7 @@ $(document).ready(function(){
     }
   // Allow click of a room name to change to that room
     $('#room-list div').click(function(){
-      chapApp.processCommand('/join ' + $(this).text());
+      chatApp.processCommand('/join ' + $(this).text());
       $('#send-message').focus();
     });
   });
