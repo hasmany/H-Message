@@ -59,3 +59,9 @@ a {
 #help {
   font: 10px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
+
+/*LANDING PAGE*/
+
+.landing-page {
+  background-color: #ebe8e5;
+}
