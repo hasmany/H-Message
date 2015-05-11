@@ -83,7 +83,7 @@ var server = http.createServer(function(request, response) {
 
   // Determine file served by default aka /
   if (request.url == '/') {
-    filePath = "public/index.html";
+    filePath = "public/landing.html";
   } else {
   // Translate URL path to relative file path
   // (public is where our files are stored)

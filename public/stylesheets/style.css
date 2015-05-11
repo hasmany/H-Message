@@ -147,15 +147,17 @@ p.lead {
   color: #b6a269;
 }
 
-
 .changeColor {
   -moz-transition:color .5s ease-in;
   -o-transition:color .5s ease-in;
   -webkit-transition:color .5s ease-in;
-
 }
 
 .changeColor:hover{
-    color:#b6a269;
-    text-decoration: underline;
+  color:#b6a269;
+  text-decoration: underline;
+}
+
+.text-center > a {
+  color: inherit;
 }
