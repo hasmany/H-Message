@@ -1,7 +1,7 @@
 H Message
 ===
 
-Hosted at: <https://h-message.herokuapp.com//>
+Hosted at: <https://h-message.herokuapp.com/>
 
 A prototype chat application. Currently under an active sprint.
 
