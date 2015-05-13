@@ -8,7 +8,7 @@
 // The idea is to prevent XXS
 
 function divEscapedContentElement(message) {
-  return $('<div></div>').text(message);
+  return $('<div></div>').text('You :: ' + message);
 }
 
 function divSystemContentElement(message) {
