@@ -8,7 +8,7 @@
 // The idea is to prevent XXS
 
 function divEscapedContentElement(message) {
-  return $('<div></div>').text('You :: ' + message);
+  return $('<div></div>').text(message);
 }
 
 function divSystemContentElement(message) {
@@ -31,7 +31,8 @@ function processUserInput(chatApp, socket) {
   } else {
   // Broadcast noncommand input to other users
     chatApp.sendMessage($('#room').text(),message);
-    $('#messages').append(divEscapedContentElement(message));
+  // Removed for now, use socket to display your text
+  //  $('#messages').append(divEscapedContentElement(message));
     $('#messages').scrollTop($('#messages').prop('scrollHeight'));
   }
   // Clear messages
