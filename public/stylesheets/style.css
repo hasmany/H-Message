@@ -4,7 +4,6 @@
 
 body {
   /*padding: 50px;*/
-  background-color: #f3f3f4;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -35,18 +34,24 @@ img {
 /*APPLICATION STYLES*/
 /*##################*/
 
-#messages {
-  background: #e7eaec;
-  border: 1px solid black;
+
+.chat-box {
+  border: 2px solid #1ab394;
 }
 
-#messages > div {
-  background-color: white;
-  padding: 10px;
-  margin: 10px 0;
+.panel-heading.panel-heading-chat {
+  background-color: #1ab394;
+  color: #FFF;
 }
 
+.chat-rooms {
+  border: 2px solid #63d2bc;
+}
 
+.panel-heading.panel-heading-room {
+  background-color: #63d2bc;
+  color: #FFF;
+}
 
 #help {
   font: 10px "Lucida Grande", Helvetica, Arial, sans-serif;

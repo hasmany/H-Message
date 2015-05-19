@@ -20,9 +20,25 @@ applciat sepiufes
 <body>
   <div class="container"id='content'>
     <div class="row">
-      <div class="col-xs-12"id='room'>Current Room :</div>
-      <div class="col-xs-9"id='messages'></div>
-      <div class="col-xs-3" id='room-list'>Room List:</div>
+      <div class="col-xs-9">
+        <div class="panel panel-success chat-box">
+          <div class="panel-heading panel-heading-chat">
+            <h3 class="panel-title" id="room">Panel title<a class="anchorjs-link" href="#panel-title"><span class="anchorjs-icon"></span></a></h3>
+          </div>
+          <div class="panel-body" id="messages">
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-3">
+        <div class="panel panel-info chat-rooms">
+          <div class="panel-heading panel-heading-room">
+            <h3 class="panel-title" id="panel-title">Room list<a class="anchorjs-link" href="#panel-title"><span class="anchorjs-icon"></span></a></h3>
+          </div>
+          <div class="panel-body" id="room-list">
+
+          </div>
+        </div>
+      </div>
     </div>
     <form id='send-form'>
       <input id='send-message' />
