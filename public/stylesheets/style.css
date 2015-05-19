@@ -4,7 +4,7 @@
 
 body {
   /*padding: 50px;*/
-  background-color: lightgray;
+  background-color: #f3f3f4;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -36,8 +36,17 @@ img {
 /*##################*/
 
 #messages {
-  background-color: rgba(240,240,240,.7);
+  background: #e7eaec;
+  border: 1px solid black;
 }
+
+#messages > div {
+  background-color: white;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+
 
 #help {
   font: 10px "Lucida Grande", Helvetica, Arial, sans-serif;
