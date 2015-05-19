@@ -17,13 +17,15 @@ applciat sepiufes
     <link rel='stylesheet' href='/stylesheets/style.css'></link>
   </head>
 <body>
-  <div id='content'>
-    <div id='room'></div>
-    <div id='room-list'></div>
-    <div id='messages'></div>
+  <div class="container"id='content'>
+    <div class="row">
+      <div class="col-xs-12"id='room'></div>
+      <div class="col-xs-9"id='messages'></div>
+      <div class="col-xs-3" id='room-list'></div>
+    </div>
     <form id='send-form'>
       <input id='send-message' />
-      <input id='send-button' type='submit' value='Send'/>
+      <input class="btn btn-default"id='send-button' type='submit' value='Send'/>
       <div id='help'>
         Chat commands:
         <ul>
