@@ -68,8 +68,12 @@ $(document).ready(function(){
   // Triggered when socket broadcast message to all in users in a room
   socket.on('message', function(message)  {
     // Display received messages from other users
-    var newElement = $('<div></div>').text(message.text);
-    $('#messages').append(newElement);
+    var nameLength = message.text.indexOf(':');
+    var name = message.text.substr(0,nameLength);
+    var msg = message.text.substr(name.length,message.text.length);
+    var messageElement = $('<div></div>').html('<b>'+name+'</b>' + msg);
+    var messageWrapper = $('<div class="chat-message"></div>').append(messageElement);
+    $('#messages').append(messageWrapper);
   });
 
   // Listener for when rooms is triggered

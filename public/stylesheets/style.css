@@ -36,6 +36,9 @@ img {
 
 
 .chat-box {
+  height: 420px;
+  max-height: 800px;
+  overflow: auto;
   border: 2px solid #1ab394;
 }
 
@@ -45,12 +48,23 @@ img {
 }
 
 .chat-rooms {
+  height: 420px;
+  max-height: 800px;
   border: 2px solid #63d2bc;
 }
 
 .panel-heading.panel-heading-room {
   background-color: #63d2bc;
   color: #FFF;
+}
+
+#messages {
+  padding: 10px;
+}
+
+.chat-message {
+  padding: 5px 0;
+  border-bottom: 1px solid #e7eaec;
 }
 
 #help {
