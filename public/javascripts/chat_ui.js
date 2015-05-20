@@ -76,10 +76,23 @@ $(document).ready(function(){
     // Get local time
     var time = new Date().toLocaleTimeString();
     // Create HTML elements
-    var messageHeader = $('<div></div>').html('<b>'+name+'</b>' + '<span class="time">'+time+'</span>');
-    var messageBody = $('<div></div>').text(msg);
     var messageWrapper = $('<div class="chat-message"></div>');
+    var messageHeader = $('<div class="msg-header"></div>');
+    var headerInfo = $('<div class="header-info group"></div>');
+    var messageBody = $('<div></div>').text(msg);
+    // Display header flushed left if socket is trigger users' own message
+    if (message.type === "self" || !message.type) {
+      var timeElement = $('<span class="timeRight">'+time+'</span>');
+      headerInfo.append('<div class="headerUserLogo"><div class="user-icon"></div>' + '<b>'+name+'</b>'+'</div>')
+        .append(timeElement);
+    // Display msg header flusehd right if socket is tirggered from other users
+    } else if (message.type === "broadcast") {
+      var timeElement = $('<span class="timeLeft">'+time+'</span>');
+      headerInfo.append('<div class="headerBroadcastLogo"><div class="broadcast-icon"></div>' + '<b class="nameBroadcast">'+name+'</b>'+'</div>')
+        .append(timeElement);
+    }
     // Append to DOM
+    messageHeader.append(headerInfo);
     messageWrapper.append(messageHeader);
     messageWrapper.append(messageBody);
     $('#messages').append(messageWrapper);

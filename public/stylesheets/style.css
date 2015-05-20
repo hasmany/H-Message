@@ -160,9 +160,54 @@ div[class^="col-"] {
   cursor: pointer;
 }
 
-.time {
+.msg-header {
+  margin-bottom: 5px;
+}
+
+.headerUserLogo {
+  float: left;
+}
+
+.headerBroadcastLogo, .broadcast-icon {
+  float: right;
+}
+
+.broadcast-icon {
+  background-color: steelblue;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background-color: steelblue;
+  margin-right: 5px;
+  float: right;
+}
+
+.nameBroadcast {
+  position: relative;
+  top: -4px;
+  right: 5px;
+}
+
+
+
+/*UI Elements*/
+.timeRight {
   float: right;
   font-style: italic;
+}
+
+.timeLeft {
+  float: left;
+  font-style: italic;
+}
+
+.user-icon {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background-color: #1ab395;
+  margin-right: 5px;
+  display: inline-block;
 }
 
 /*############*/
@@ -234,7 +279,19 @@ div[class^="col-"] {
   text-transform: uppercase;
 }
 
+/*CLEAR FIX*/
 
+.group:before,
+.group:after {
+    content: "";
+    display: table;
+}
+.group:after {
+    clear: both;
+}
+.group {
+    zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+}
 
 
 
