@@ -89,6 +89,10 @@ div[class^="col-"] {
   background-color: #63d2bc;
 }
 
+.btn-layout > button{
+  margin-bottom: 5px;
+}
+
 
 /*############*/
 /*LANDING PAGE*/
