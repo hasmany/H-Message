@@ -29,37 +29,38 @@ applciat sepiufes
           </div>
         </div>
       </div>
-      <div class="col-xs-2">
+      <div class="col-xs-2 hidden-xs">
         <div class="panel panel-info chat-rooms">
           <div class="panel-heading panel-heading-room">
             <h3 class="panel-title" id="panel-title">Room list<a class="anchorjs-link" href="#panel-title"><span class="anchorjs-icon"></span></a></h3>
           </div>
           <div class="panel-body" id="room-list">
-
           </div>
         </div>
+      </div>
+      <div class="col-xs-2 visible-xs">
+        <button class="btn btn-info btn-room">Rooms</button>
+        <button class="btn btn-warning">Cmds</button>
       </div>
     </div>
     <div class="row">
       <div class="col-xs-9">
         <form id='send-form'>
-          <div class="row">
-            <div class="col-xs-9">
-              <input class="form-control" id='send-message' placholder"Type Message.."/>
-            </div>
-            <div class="col-xs-3">
-              <button class="btn btn-primary btn-sm btn-msg"id='send-button' type='submit'>Send Message</button>
-            </div>
+          <div class="col-xs-9">
+            <input class="form-control" id='send-message' placholder"Type Message..">
+          </div>
+          <div class="col-xs-3">
+            <button class="btn btn-primary btn-sm btn-msg"id='send-button' type='submit'>Send Message</button>
           </div>
         </form>
-        <div id='help'>
-          Chat commands:
-          <ul>
-          <li>Change nickname: <code>/nick [username]</code></li>
-          <li>Join/create room: <code>/join [room name]</code></li>
-          </ul>
-        </div>
       </div>
+    </div>
+    <div id='help' class="hidden-xs">
+      <h5>Chat commands:</h5>
+      <ul>
+        <li>Change nickname: <code>/nick [username]</code></li>
+        <li>Join/create room: <code>/join [room name]</code></li>
+      </ul>
     </div>
   </div>
 
