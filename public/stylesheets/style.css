@@ -3,7 +3,7 @@
 /*############*/
 
 body {
-  /*padding: 50px;*/
+  margin-top: 10px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -64,12 +64,17 @@ img {
 
 .chat-message {
   padding: 5px 0;
-  border-bottom: 1px solid #e7eaec;
+  border-bottom: 2px solid #e7eaec;
 }
 
-#help {
-  font: 10px "Lucida Grande", Helvetica, Arial, sans-serif;
+.btn-primary.btn-msg {
+  background-color: #009d7e;
 }
+
+.btn-primary.btn-msg:hover {
+  background-color:#007861;
+}
+
 
 /*############*/
 /*LANDING PAGE*/
