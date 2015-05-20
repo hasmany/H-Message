@@ -159,6 +159,12 @@ div[class^="col-"] {
   color: #fff;
   cursor: pointer;
 }
+
+.time {
+  float: right;
+  font-style: italic;
+}
+
 /*############*/
 /*LANDING PAGE*/
 /*###########*/
@@ -210,7 +216,6 @@ div[class^="col-"] {
 .main-header nav span:hover, .social-media a:hover {
   color: #007861;
 }
-
 
 .banner h1 {
   line-height: 50px;

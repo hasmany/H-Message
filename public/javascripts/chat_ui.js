@@ -68,11 +68,20 @@ $(document).ready(function(){
   // Triggered when socket broadcast message to all in users in a room
   socket.on('message', function(message)  {
     // Display received messages from other users
+
+    // Parse Name and message
     var nameLength = message.text.indexOf(':');
     var name = message.text.substr(0,nameLength);
-    var msg = message.text.substr(name.length,message.text.length);
-    var messageElement = $('<div></div>').html('<b>'+name+'</b>' + msg);
-    var messageWrapper = $('<div class="chat-message"></div>').append(messageElement);
+    var msg = message.text.substr(name.length+1,message.text.length);
+    // Get local time
+    var time = new Date().toLocaleTimeString();
+    // Create HTML elements
+    var messageHeader = $('<div></div>').html('<b>'+name+'</b>' + '<span class="time">'+time+'</span>');
+    var messageBody = $('<div></div>').text(msg);
+    var messageWrapper = $('<div class="chat-message"></div>');
+    // Append to DOM
+    messageWrapper.append(messageHeader);
+    messageWrapper.append(messageBody);
     $('#messages').append(messageWrapper);
   });
 
