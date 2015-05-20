@@ -76,6 +76,10 @@ div[class^="col-"] {
   border-bottom: 2px solid #e7eaec;
 }
 
+#send-message {
+  font-size: 16px;
+}
+
 .btn-primary.btn-msg {
   background-color: #009d7e;
 }
@@ -93,7 +97,21 @@ div[class^="col-"] {
   margin-bottom: 5px;
 }
 
+#mobile-room-list div, #room-list div {
+  padding: 8px;
+  border-radius: 5px;
+}
+#mobile-room-list div:hover {
+  background-color: #63d2bc;
+  color: #fff;
+  cursor: pointer;
+}
 
+#room-list div:hover {
+  background-color: #63d2bc;
+  color: #fff;
+  cursor: pointer;
+}
 /*############*/
 /*LANDING PAGE*/
 /*###########*/

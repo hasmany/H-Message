@@ -81,11 +81,13 @@ $(document).ready(function(){
   socket.on('rooms',function(rooms) {
   // Empty Dom element, to rebuild room list
     $('#room-list').empty();
+    $("#mobile-room-list").empty();
   // Loop through rooms
     for (var room in rooms) {
       room = room.substring(1,room.length);
       if ( room!= '') {
-        $('#room-list').append(divEscapedContentElement(room))
+        $('#room-list').append(divEscapedContentElement(room));
+        $('#mobile-room-list').append(divEscapedContentElement(room));
       }
     }
   // Allow click of a room name to change to that room
@@ -93,6 +95,14 @@ $(document).ready(function(){
       chatApp.processCommand('/join ' + $(this).text());
       $('#send-message').focus();
     });
+
+    $('#mobile-room-list div').click(function(){
+      chatApp.processCommand('/join ' + $(this).text());
+      $('#roomModal').modal('hide');
+      $('#send-message').focus();
+
+    });
+
   });
 
   // Request list of available rooms intermittently
