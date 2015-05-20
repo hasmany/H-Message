@@ -36,8 +36,8 @@ img {
 
 
 .chat-box {
-  height: 420px;
-  max-height: 800px;
+  height: 320px;
+  max-height: 400px;
   overflow: auto;
   border: 2px solid #1ab394;
 }
@@ -48,8 +48,8 @@ img {
 }
 
 .chat-rooms {
-  height: 420px;
-  max-height: 800px;
+  height: 320px;
+  max-height: 400px;
   border: 2px solid #63d2bc;
 }
 
