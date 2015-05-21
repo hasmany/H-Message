@@ -168,7 +168,7 @@ div[class^="col-"] {
   float: left;
 }
 
-.headerBroadcastLogo, .broadcast-icon {
+.headerBroadcastLogo, .broadcast-icon, .broadcast-text {
   float: right;
 }
 
@@ -191,14 +191,17 @@ div[class^="col-"] {
 
 
 /*UI Elements*/
-.timeRight {
-  float: right;
+
+.time {
   font-style: italic;
+  text-decoration: underline;
+  margin: 0 12px 0 5px;
 }
 
-.timeLeft {
-  float: left;
-  font-style: italic;
+.timeRight {
+  float: right;
+  position: relative;
+  top: -4px;
 }
 
 .user-icon {
