@@ -12,6 +12,8 @@ p,h1,ul,li {
   margin: 0;
 }
 
+
+
 .landing-page a {
   text-decoration: none;
   cursor: pointer;
@@ -39,6 +41,11 @@ img {
 @font-face {
   font-family: 'NewBaservilleStd-Bold';
    src: url('../NewBaskervilleStd-Bold.otf');
+}
+
+@font-face {
+  font-family: "WhitneyBook";
+    src: url('WhitneyBook.ttf');
 }
 
 @font-face {
@@ -191,6 +198,10 @@ div[class^="col-"] {
   right: 5px;
 }
 
+.chat-main-body {
+  background: url('ribs_light-half.png'),linear-gradient(115.61deg,#448fab 0,#4b9990 99%);
+}
+
 
 
 /*UI Elements*/
@@ -221,14 +232,17 @@ div[class^="col-"] {
 /*###########*/
 
 .landing-page {
-  width: 96%;
+ /* width: 96%;
   margin-left: auto;
   margin-right: auto;
   padding: 15px;
   font-size: 1.5em;
   background-color: #60eab6;
   color: #fff;
-  font-family: 'ff-enzo-web', helvetica, arial, sans-serif;
+  font-family: 'ff-enzo-web', helvetica, arial, sans-serif;*/
+  background: url('splash-hero.svg'),linear-gradient(to bottom right,#3d8099,#74b1c8);
+  background-position: center;
+  color: #fff;
 }
 
 .landing-page > * {
@@ -334,5 +348,4 @@ div[class^="col-"] {
     margin-left: 100px;
   }
 }
-
 
