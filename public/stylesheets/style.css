@@ -281,7 +281,7 @@ div[class^="col-"] {
 }
 
 .main-header nav span:hover, .social-media a:hover {
-  color: #39b54a;
+  color: #2689ac;
 }
 
 .banner h1 {
@@ -296,7 +296,7 @@ div[class^="col-"] {
   color: white;
   outline: none;
   border: none;
-  background-color: #39b54a;
+  background-image: linear-gradient(to bottom,#33a8d2,#2689ac);
   padding: 20px 35px;
   text-transform: uppercase;
 }
