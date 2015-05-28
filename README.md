@@ -14,5 +14,5 @@ Tech
 - HTML5 (local storage API)
 - CSS3
 - Bootsrap
-
+- Socket.io
 
