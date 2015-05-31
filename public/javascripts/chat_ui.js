@@ -15,6 +15,25 @@ function divSystemContentElement(message) {
   return $('<div></div>').html('<i>'+message+'</i>');
 }
 
+
+function appendOwnMsg(time,name,header) {
+  var timeElement = $('<span class="time">'+time+'</span>');
+  header.append('<div class="headerUserLogo"><div class="user-icon"></div>' + '<b>'+name+'</b>'+'</div>')
+    .append(timeElement);
+}
+
+
+
+function appendBroadcastMsg(time, name, header,messageBody) {
+  var timeElement = $('<span class="time timeRight">'+time+'</span>');
+  header.append('<div class="headerBroadcastLogo"><div class="broadcast-icon"></div>' + '<b class="nameBroadcast">'+name+'</b>'+'</div>')
+    .append(timeElement);
+  messageBody.addClass('broadcast-text');
+}
+
+
+
+
 // Processing user input
 
 function processUserInput(chatApp, socket) {
@@ -67,35 +86,21 @@ $(document).ready(function(){
   // Listener for when message is triggered
   // Triggered when socket broadcast message to all in users in a room
   socket.on('message', function(message)  {
-    // Display received messages from other users
-
     // Parse Name and message
-    var nameLength = message.text.indexOf(':');
-    var name = message.text.substr(0,nameLength);
-    // Change the parse if the type is join
-    if (message.type ==='join') {
-      var msg = message.text;
-    } else {
-      var msg = message.text.substr(name.length+1,message.text.length);
-    }
+    var processedMsg = chatApp.processMessage(message);
     // Get local time
     var time = new Date().toLocaleTimeString();
-    // Create HTML elements
+    // Create HTML elements for each message
     var messageWrapper = $('<div class="chat-message group"></div>');
     var messageHeader = $('<div class="msg-header"></div>');
     var headerInfo = $('<div class="header-info group"></div>');
-    var messageBody = $('<div class="group"></div>').text(msg);
+    var messageBody = $('<div class="group"></div>').text(processedMsg.msg);
     // Display header flushed left if socket is trigger users' own message
     if (message.type === "self" || !message.type) {
-      var timeElement = $('<span class="time">'+time+'</span>');
-      headerInfo.append('<div class="headerUserLogo"><div class="user-icon"></div>' + '<b>'+name+'</b>'+'</div>')
-        .append(timeElement);
-    // Display msg header flusehd right if socket is tirggered from other users
+      appendOwnMsg(time,processedMsg.name,headerInfo);
+    // Display msg header flusehd right if socket is triggered from other users
     } else if (message.type === "broadcast") {
-      var timeElement = $('<span class="time timeRight">'+time+'</span>');
-      headerInfo.append('<div class="headerBroadcastLogo"><div class="broadcast-icon"></div>' + '<b class="nameBroadcast">'+name+'</b>'+'</div>')
-        .append(timeElement);
-      messageBody.addClass('broadcast-text');
+      appendBroadcastMsg(time,processedMsg.name,headerInfo,messageBody);
     }
     // Append to DOM
     messageHeader.append(headerInfo);

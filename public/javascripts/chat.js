@@ -67,3 +67,30 @@ Chat.prototype.processCommand = function(command) {
   return message;
 };
 
+// Parse message depending on type from server
+Chat.prototype.processMessage = function(message) {
+  // Return object
+  var processedMessage = {};
+  // Get name from message
+  var nameLength = message.text.indexOf(':');
+  var name = message.text.substr(0,nameLength);
+  // Add name property
+  processedMessage.name = name;
+  // Add corresponidng  msg property
+  if (message.type === 'join') {
+    processedMessage.msg = message.text;
+  } else {
+    processedMessage.msg = message.text.substr(name.length+1, message.text.length);
+  }
+  return processedMessage;
+};
+
+
+ // var nameLength = message.text.indexOf(':');
+ //    var name = message.text.substr(0,nameLength);
+ //    // Change the parse if the type is join
+ //    if (message.type ==='join') {
+ //      var msg = message.text;
+ //    } else {
+ //      var msg = message.text.substr(name.length+1,message.text.length);
+ //    }
